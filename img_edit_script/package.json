@@ -1,0 +1,17 @@
+{
+  "name": "img_edit_script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "img_edit.js",
+  "type": "module",
+  "scripts": {
+    "start": "node img_edit.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "inquirer": "^9.1.4"
+  }
+}
