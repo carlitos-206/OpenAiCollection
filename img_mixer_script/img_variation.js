@@ -24,7 +24,7 @@ const openAI =  new OpenAIApi(configuration);
 // API CALL
 const apiCall = async () =>{
   // img file name
-  const path= './images/test.png'
+  const path= './images/image_name.png'
   // the call
   try{
     if(existsSync(path)){
@@ -49,7 +49,7 @@ const apiCall = async () =>{
       writeFileSync(`./images/result/${Date.now()}.png`, buffer)
       return main_app(1)
     }else{
-      console.log('here')
+      return main_app("error")
     }
   }catch(error){
     console.log(error)
