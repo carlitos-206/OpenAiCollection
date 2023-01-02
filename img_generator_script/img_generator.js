@@ -58,7 +58,7 @@ const main_app = async (val) =>{
     let question = {
       type: 'input',
       name: 'welcome page',
-      message: 'Welcome What would you like to see? :)  '
+      message: 'Welcome what can I draw for you? :)  '
     }
     return setTimeout(() =>{
       inquirer.prompt(question).then(
@@ -70,15 +70,15 @@ const main_app = async (val) =>{
   }else{
     let question = {
       type: 'input',
-      name: 'welcome page',
+      name: 'recursive question',
       message: `
-      :) what else can i show you? 
+      :) Write something new to draw? 
       `
     }
     return setTimeout(() =>{
       inquirer.prompt(question).then(
         answer => {
-          return apiCall(answer['welcome page'])
+          return apiCall(answer['recursive question'])
         }
       )
     })

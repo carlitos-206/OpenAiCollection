@@ -24,7 +24,7 @@ const openAI =  new OpenAIApi(configuration);
 // API CALL
 const apiCall = async () =>{
   // img file name
-  const path= './images/image_name.png'
+  const path= './images/dog.png'
   // the call
   try{
     if(existsSync(path)){
