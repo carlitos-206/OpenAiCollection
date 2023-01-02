@@ -84,6 +84,5 @@ const main_app = async (val) =>{
     })
   }
 }
-
 // Start the app
 main_app(0)
