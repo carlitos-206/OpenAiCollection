@@ -1,7 +1,7 @@
 // Hides the API KEY -- DO NOT REMOVE
 import * as dotenv from 'dotenv';
 dotenv.config();
-// The API KEY STORED IN A VARIABLE TO BE ACCESS GLOBALLY s
+// The API KEY STORED IN A VARIABLE TO BE ACCESS GLOBALLY
 const api_key = process.env.AI_KEY
 
 // OPEN AI API imports
@@ -11,16 +11,14 @@ import { Configuration, OpenAIApi } from 'openai';
 import { writeFileSync } from 'fs';
 import inquirer from 'inquirer'
 
-
 // Authenticate your call with a new configuration of the api by passing the api key
 const configuration = new Configuration({
   apiKey: api_key,
 
 })
+
 // API SDK Function call
 const openAI =  new OpenAIApi(configuration);
-
-
 
 // API CALL
 const apiCall = async (prompt) =>{
@@ -41,10 +39,9 @@ const apiCall = async (prompt) =>{
   console.log(`
   url: ${url},
   ALL:
-    ${JSON.stringify(result)}
+    ${result.data}
   `)
 
-  
   // Download IMG to Hard Disk
   const imgResult = await fetch(url);
   const blob = await imgResult.blob()
@@ -54,9 +51,6 @@ const apiCall = async (prompt) =>{
   return main_app(1)
 }
 
-
-
-
 // Recursive Function to keep terminal running 
 const main_app = async (val) =>{
   // When the app first starts
@@ -64,7 +58,7 @@ const main_app = async (val) =>{
     let question = {
       type: 'input',
       name: 'welcome page',
-      message: 'Welcome my child, what would you like to see?    :)  '
+      message: 'Welcome what can I draw for you? :)  '
     }
     return setTimeout(() =>{
       inquirer.prompt(question).then(
@@ -76,23 +70,20 @@ const main_app = async (val) =>{
   }else{
     let question = {
       type: 'input',
-      name: 'welcome page',
+      name: 'recursive question',
       message: `
-      :) what else can i show you? 
-      or are you afraid to continue?
+      :) Write something new to draw? 
       `
     }
     return setTimeout(() =>{
       inquirer.prompt(question).then(
         answer => {
-          return apiCall(answer['welcome page'])
+          return apiCall(answer['recursive question'])
         }
       )
     })
   }
 }
-
-
 
 // Start the app
 main_app(0)

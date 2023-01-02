@@ -1,12 +1,12 @@
 {
-  "name": "img_generator_script",
+  "name": "img_mixer_script",
   "version": "1.0.0",
   "description": "",
-  "main": "img_generator.js",
+  "main": "img_variation.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node img_generator.js"
+    "start": "node img_variation.js"
   },
   "keywords": [],
   "author": "",
