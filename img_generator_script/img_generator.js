@@ -41,7 +41,7 @@ const apiCall = async (prompt) =>{
   ALL:
     ${result.data}
   `)
-  
+
   // Download IMG to Hard Disk
   const imgResult = await fetch(url);
   const blob = await imgResult.blob()
